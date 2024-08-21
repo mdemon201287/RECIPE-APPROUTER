@@ -1,6 +1,3 @@
-// src/app/context/CartContext.tsx
-
-
 'use client';
 
 import React, { createContext, useState, useContext, useEffect } from 'react';
@@ -13,6 +10,7 @@ interface CartContextType {
   incrementQuantity: (idMeal: string) => void;
   decrementQuantity: (idMeal: string) => void;
   search: (query: string) => void;
+  clearCart: () => void;
 }
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
@@ -92,16 +90,9 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
   const clearCart = () => {
     setCartItems([]);
   };
-  
-  // Add clearCart to the context provider value
-  return (
-    <CartContext.Provider value={{ cartItems, addToCart, removeFromCart, incrementQuantity, decrementQuantity, search, clearCart }}>
-      {children}
-    </CartContext.Provider>
-  );
 
   return (
-    <CartContext.Provider value={{ cartItems, addToCart, removeFromCart, incrementQuantity, decrementQuantity, search }}>
+    <CartContext.Provider value={{ cartItems, addToCart, removeFromCart, incrementQuantity, decrementQuantity, search, clearCart }}>
       {children}
     </CartContext.Provider>
   );

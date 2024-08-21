@@ -30,43 +30,29 @@ export default function Navbar() {
       <div className="container mx-auto flex justify-between items-center">
         <Link href="/">
           <div className="flex items-center">
-            <Image src="/path-to-logo.png" alt="Logo" width={50} height={50} />
-            <span className="text-xl font-bold text-gray-800 ml-2">Red Onion Foods</span>
+          <Image src="/path-to-logo.png" alt="Logo" width={50} height={50} />            <span className="text-xl font-bold text-gray-800 ml-2">Home</span>
           </div>
         </Link>
         <div className="flex items-center space-x-4">
           <div className="relative">
-            <input
-              type="text"
-              value={searchQuery}
-              onChange={handleSearchChange}
-              className="px-4 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-red-500"
-              placeholder="Search"
-            />
-            <button
-              className="absolute right-0 top-0 bottom-0 bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-full"
-              onClick={handleSearchSubmit}
-            >
-              Search
-            </button>
           </div>
-          <Link href="/signin" className="text-gray-700 hover:text-red-500 transition-colors">
-          Sign In
-          </Link>
-          <Link href="/signup" className="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-6 rounded-full transition-transform transform hover:scale-105">
-            Sign Up
-          </Link>
-          <button
+            <Link href="/auth/signin" className="text-gray-700 hover:text-red-500 transition-colors">
+              Sign In
+            </Link>
+            <Link href="/auth/signup" className="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-6 rounded-full transition-transform transform hover:scale-105">
+              Sign Up
+            </Link>
+            <button
             className="relative bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-full transition-transform transform hover:scale-105"
             onClick={toggleCart}
-          >
+            >
             Cart
             {cartItems.length > 0 && (
               <span className="absolute -top-1 -right-2 bg-yellow-400 text-black rounded-full px-2 text-sm">
                 {cartItems.length}
               </span>
             )}
-          </button>
+            </button>
         </div>
       </div>
 
