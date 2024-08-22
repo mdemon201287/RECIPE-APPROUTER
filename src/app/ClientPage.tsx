@@ -1,8 +1,6 @@
-// src/app/ClientPage.tsx
+'use client'; // Add this directive at the top of the file
 
-'use client';
-
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import RecipeCard from '@/components/RecipeCard';
 import { Recipe } from '@/types/recipe';
 import { useCart } from '@/context/CartContext';
@@ -46,18 +44,18 @@ export default function ClientPage() {
       <div className="flex justify-center mb-8">
         <input
           type="text"
-          className="px-4 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-red-500 w-full max-w-md"
+          className="px-4 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-red-500 w-full max-w-md transition-all duration-300 ease-in-out hover:border-red-500"
           placeholder="Search"
           value={searchQuery}
           onChange={handleSearchChange}
         />
-        <button className="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-full ml-4">
+        <button className="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-full ml-4 transition-all duration-300 ease-in-out">
           Search
         </button>
       </div>
       <div className="flex space-x-8 mb-8 justify-center">
         <button
-          className={`font-medium pb-2 transition-colors ${
+          className={`font-medium pb-2 transition-colors duration-300 ${
             activeCategory === 'breakfast'
               ? 'text-red-500 font-bold border-b-4 border-red-500'
               : 'text-gray-500 hover:text-red-500'
@@ -67,7 +65,7 @@ export default function ClientPage() {
           BREAKFAST
         </button>
         <button
-          className={`font-medium pb-2 transition-colors ${
+          className={`font-medium pb-2 transition-colors duration-300 ${
             activeCategory === 'lunch'
               ? 'text-red-500 font-bold border-b-4 border-red-500'
               : 'text-gray-500 hover:text-red-500'
@@ -77,7 +75,7 @@ export default function ClientPage() {
           LUNCH
         </button>
         <button
-          className={`font-medium pb-2 transition-colors ${
+          className={`font-medium pb-2 transition-colors duration-300 ${
             activeCategory === 'dinner'
               ? 'text-red-500 font-bold border-b-4 border-red-500'
               : 'text-gray-500 hover:text-red-500'

@@ -1,6 +1,3 @@
-// src/components/Navbar.tsx
-
-
 'use client';
 
 import { useState } from 'react';
@@ -30,29 +27,31 @@ export default function Navbar() {
       <div className="container mx-auto flex justify-between items-center">
         <Link href="/">
           <div className="flex items-center">
-          <Image src="/path-to-logo.png" alt="Logo" width={50} height={50} />            <span className="text-xl font-bold text-gray-800 ml-2">Home</span>
+            <Image src="/images/path-to-logo.png" alt="Logo" width={50} height={50} />
+            <span className="text-xl font-bold text-gray-800 ml-2">Home</span>
           </div>
         </Link>
         <div className="flex items-center space-x-4">
           <div className="relative">
+            {/* Add any additional search functionality here */}
           </div>
-            <Link href="/auth/signin" className="text-gray-700 hover:text-red-500 transition-colors">
-              Sign In
-            </Link>
-            <Link href="/auth/signup" className="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-6 rounded-full transition-transform transform hover:scale-105">
-              Sign Up
-            </Link>
-            <button
+          <Link href="/auth/signin" className="text-gray-700 hover:text-red-500 transition-colors">
+            Sign In
+          </Link>
+          <Link href="/auth/signup" className="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-6 rounded-full transition-transform transform hover:scale-105">
+            Sign Up
+          </Link>
+          <button
             className="relative bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-full transition-transform transform hover:scale-105"
             onClick={toggleCart}
-            >
+          >
             Cart
             {cartItems.length > 0 && (
               <span className="absolute -top-1 -right-2 bg-yellow-400 text-black rounded-full px-2 text-sm">
                 {cartItems.length}
               </span>
             )}
-            </button>
+          </button>
         </div>
       </div>
 
@@ -77,7 +76,7 @@ export default function Navbar() {
             ))}
           </ul>
           <Link href="/checkout" className="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-6 rounded-full transition-transform transform hover:scale-105">
-              Checkout
+            Checkout
           </Link>
         </div>
       )}

@@ -1,6 +1,3 @@
-// src/components/RecipeCard.tsx
-
-
 import Link from 'next/link';
 import { Recipe } from '@/types/recipe';
 import Image from 'next/image';
@@ -12,7 +9,7 @@ interface RecipeCardProps {
 
 export default function RecipeCard({ recipe, addToCart }: RecipeCardProps) {
   return (
-    <div className="border rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
+    <div className="border rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 hover:scale-105 transform">
       <Link href={`/recipes/${recipe.idMeal}`}>
         <div className="cursor-pointer">
           <Image
